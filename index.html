@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Try CareerPilot's job matching, résumé coaching, and mock interview with a guided classroom example.">
+<meta name="robots" content="noindex, nofollow">
+<title>CareerPilot · Classroom Demo</title>
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <span class="brand">CareerPilot</span>
+    <div class="languages" role="group" id="languages" aria-label="Language">
+      <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+      <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="intro">
+    <h1 id="title">Career coaching workspace</h1>
+    <p id="intro">Set a target role, then try the coaching tasks with a fictional course survey project.</p>
+  </div>
+  <nav id="tasks" class="tasks" aria-label="Coaching tasks">
+    <button type="button" data-task="match" aria-pressed="true">Job Match</button>
+    <button type="button" data-task="story" aria-pressed="false" disabled>Résumé Coaching</button>
+    <button type="button" data-task="interview" aria-pressed="false" disabled>Mock Interview</button>
+  </nav>
+  <section id="target-panel" class="target-panel" aria-labelledby="target-label">
+    <h2 id="target-label">Target role</h2>
+    <ol id="role-progress" class="role-progress" aria-label="Target role setup"></ol>
+    <h3 id="target-step-title" tabindex="-1"></h3>
+    <p id="target-instructions"></p>
+    <div id="career-area" class="career-area" hidden>
+      <label for="career-input" id="career-input-label"></label>
+      <input id="career-input" type="text" readonly>
+    </div>
+    <ul id="role-choices" class="role-choices" hidden></ul>
+    <div id="role-review" class="role-review" hidden>
+      <p id="final-role"></p>
+      <dl id="confirmed-details"></dl>
+    </div>
+    <div class="target-footer">
+      <p id="target-status" role="status" tabindex="-1" hidden></p>
+      <div id="role-actions" class="role-actions">
+        <button class="secondary" type="button" id="back-target" hidden>Back</button>
+        <button class="primary" type="button" id="confirm-target">Confirm career area</button>
+      </div>
+    </div>
+  </section>
+  <section id="workspace" class="workspace" aria-labelledby="task-title" hidden>
+    <header class="workspace-header">
+      <div>
+        <h2 id="task-title"></h2>
+        <p id="task-detail"></p>
+        <p id="task-target" class="task-target" hidden></p>
+      </div>
+      <button type="button" class="secondary" id="restart" hidden></button>
+    </header>
+    <div id="conversation" class="conversation" role="log" aria-label="Conversation"></div>
+    <form id="composer" class="composer">
+      <div class="composer-header">
+        <label for="draft" id="draft-label"></label>
+        <span id="turn"></span>
+      </div>
+      <textarea id="draft" aria-describedby="draft-hint" rows="3" maxlength="4000" required></textarea>
+      <div class="composer-footer">
+        <p id="draft-hint"></p>
+        <button class="primary" type="submit" id="send"></button>
+      </div>
+    </form>
+    <p id="complete" class="complete" role="status" hidden></p>
+  </section>
+</main>
+</body>
+</html>
